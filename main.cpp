@@ -103,8 +103,8 @@ int main(int argc, char** argv)
             double difference = sqrt(minimum*minimum + maximum*maximum);
             
             if (difference < 1.1) amplifer += 0.1;
-            else if (difference < 1.2) amplifer += 0.01;
-            else if (difference < 1.3) amplifer -= 0.01;
+            else if (difference < 1.15) amplifer += 0.01;
+            else if (difference > 1.25 && difference < 1.3) amplifer -= 0.01;
             else amplifer -= 0.1;
             
             counter = 0;
@@ -119,7 +119,6 @@ int main(int argc, char** argv)
         if (doubleArray[i] > 1) doubleArray[i] = 1;
         else if (doubleArray[i] < -1) doubleArray[i] = -1;
     }
-
 
     // TO SIGNED 16-BIT
     for (uint32_t i=0; i<SAMPLES; i++)
