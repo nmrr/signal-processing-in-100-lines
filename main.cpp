@@ -105,7 +105,7 @@ int main(int argc, char** argv)
             if (difference < 1.1) amplifer += 0.1;
             else if (difference < 1.15) amplifer += 0.01;
             else if (difference > 1.25 && difference < 1.3) amplifer -= 0.01;
-            else amplifer -= 0.1;
+            else if (difference >= 1.3) amplifer -= 0.1;
             
             counter = 0;
             maximum = doubleArray[i];
